@@ -1,0 +1,184 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const terminalBody = document.querySelector(".terminal-body");
+    const terminalHeader = document.querySelector(".terminal-header");
+    const terminal = document.querySelector(".terminal");
+    const commandHistory = [];
+    let historyIndex = -1;
+    let themeColors = {
+        textColor: '#00ff00', // Default text color (green)
+        headerColor: 'white',
+    };
+
+    const commands = {
+        "help": () => {
+            return `
+                <span style="color:${themeColors.textColor};">about</span>          - get to know more about me <br>
+                <span style="color:${themeColors.textColor};">clear</span>          - clear the terminal display <br>
+                <span style="color:${themeColors.textColor};">echo</span>           - display custom text or messages <br>
+                <span style="color:${themeColors.textColor};">education</span>      - explore my academic journey <br>
+                <span style="color:${themeColors.textColor};">email</span>          - reach out via Email <br>
+                <span style="color:${themeColors.textColor};">exit</span>           - close the current session <br>
+                <span style="color:${themeColors.textColor};">help</span>           - get a list of available commands <br>
+                <span style="color:${themeColors.textColor};">history</span>        - see your command usage history <br>
+                <span style="color:${themeColors.textColor};">projects</span>       - check out my projects <br>
+                <span style="color:${themeColors.textColor};">pwd</span>            - show the current working directory <br>
+                <span style="color:${themeColors.textColor};">skills</span>         - view my skill set <br>
+                <span style="color:${themeColors.textColor};">socials</span>        - discover my social media profiles <br>
+                <span style="color:${themeColors.textColor};">themes</span>         - browse through available themes <br>
+                <span style="color:${themeColors.textColor};">welcome</span>        - view the introductory section <br>
+                <span style="color:${themeColors.textColor};">whoami</span>         - find out who the current user is <br>
+            `;
+        },
+        "themes": `Available themes: <br>ubuntu<br>git-bash<br>sunset<br>sweet<br><br>To change themes, type 'themes go to "theme-name"'.<br>Example: themes go to sunset`,
+        "themes go to ubuntu": () => {
+            terminal.style.backgroundColor = '#300a24';
+            terminalHeader.style.backgroundColor = '#595959';
+            terminalHeader.style.color = 'white';
+            terminalBody.style.color = '#00ff00';
+            themeColors.textColor = '#00ff00';
+            return "Switched to Ubuntu theme!";
+        },
+
+        "themes go to git-bash": () => {
+            terminal.style.background = 'linear-gradient(135deg, #1a1a1a, #2e2e2e)'; 
+            terminalHeader.style.background = 'linear-gradient(135deg, #2e2e2e, #444444)';
+            terminalHeader.style.color = '#00ff00'; 
+            terminalBody.style.color = '#00ff00'; 
+            themeColors.textColor = '#00ff00';
+            return "Switched to Git-Bash theme!";
+        },
+
+        "themes go to sunset": () => {
+            terminal.style.background = 'linear-gradient(in oklab, #ffff00, red)'; 
+            terminalHeader.style.background = 'linear-gradient(135deg, #ff7f50, #ff4500)'; 
+            terminalHeader.style.color = '#ffffff'; 
+            terminalBody.style.color = '#fffb00'; 
+            themeColors.textColor = '#fffb00';
+            return "Switched to Sunset theme!";
+        },
+
+        "themes go to sweet": () => {
+            terminal.style.background = 'linear-gradient(135deg, #ffb6c1, #ff69b4)'; 
+            terminalHeader.style.background = 'linear-gradient(135deg, #ffd9df, #ff69b4)'; 
+            terminalHeader.style.color = '#ff178b'; 
+            terminalBody.style.color = '#ff178b'; 
+            themeColors.textColor = '#ff0f9f';
+            return "Switched to Sweet theme!";
+        },
+        "about": "Curiously driven backend developer.<br>Passionate, Backend dev who like to participate in hackathons + solving silly bugs + building awesome projects💖 <br> Always ready to help out and learn",
+        // "portfolio": () => {
+        //     window.open("https://hardikportfolio.com/", "_blank");
+        //     return '';
+        // }, 
+        "clear": () => { terminalBody.innerHTML = ''; return ''; },
+        "echo": (args) => args.join(" "),
+        "education": () => {
+            return `<span style="color:${themeColors.textColor};">G.H. Raisoni College of Commerce, Science and Technology</span> | 2023 - 2026 <br><span style="color:${themeColors.textColor};">Dr. Ambedkar College</span> | 2020 - 2022 <br><span style="color:${themeColors.textColor};">Shahu's Garden High School</span> | till 2020`
+        },
+        "email": () => {
+            window.open("mailto:hardikgayner@gmail.com");
+            return 'You can reach me at: hardikgayner@gmail.com';
+        },
+        "exit": () => window.close(),
+        "history": () => commandHistory.join("<br>"),
+        "projects": "You can visit my github to see all my projects <hr> These are my personal favorites: <br>1. travelBuddy - Find Travel Companions and Share Costs<br> A platform where users can connect with travel companions heading to the same destination. Users can share costs for accommodation, food, and other expenses, and upload detailed travel itineraries to collaborate seamlessly. Built with ExpressJS, MongoDB, and EJS.  <br> <img src='/images/counselai.png' style='width:75%; height:auto;'> &nbsp; <a href=''> Link </a> <br>2. MERN Chat - Real-Time Messaging App<br> A feature-rich real-time chat application built with the MERN stack. It includes private and group messaging, live status indicators, and secure authentication using JWT. The app focuses on performance, scalability, and an intuitive UI.  <br><img src='/images/arbotique.png' style='width:75%; height:auto;'> &nbsp; <a href=''> Link </a> <br>3. SuperCar Rental - Car Rental Management Platform<br> An online platform for renting high-end cars with features like vehicle availability tracking, rental cost calculation, and booking history. Users can browse car models, book vehicles, and track their bookings effortlessly. Built with React, Node.js, and MongoDB.  <br><img src='/images/mediwise.png' style='width:75%; height: auto;'> &nbsp; <a href=''> Link </a> "
+        ,"pwd": "You are currently in the root directory.",
+        "skills": () => {
+        return `I am a fast learner and highly motivated individual. <hr> 
+        <span style="color:${themeColors.textColor};">Languages</span>: Java, JavaScript, C++, Python <br>
+        <span style="color:${themeColors.textColor};">Currently Learning</span>: TypeScript, Golang, Flutter  <br>
+        <span style="color:${themeColors.textColor};">Frameworks & Libraries</span>: Node.js, Express.js, React, EJS, Bootstrap, Tailwind, Material UI <br>
+        <span style="color:${themeColors.textColor};">Tools</span>: Git, Postman, VS Code <br>
+        <span style="color:${themeColors.textColor};">Database Technologies</span>: MySQL, MongoDB, PostreSQL <br>
+        <span style="color:${themeColors.textColor};">Strengths</span>: DSA, Backend Development, REST APIs, Problem Solving <br>
+        <span style="color:${themeColors.textColor};">Soft Skills</span>: Leadership, Teamwork, Communication, Time Management`;
+    },
+        "socials": "Connect with me on <br>1. LinkedIn: https://www.linkedin.com/in/hardik-gayner-0b2ab32ba/,<br>2. GitHub: https://github.com/imHardik1606,<br>3. Twitter: https://x.com/h_gayner, <br> Leetcode: https://leetcode.com/u/HardikGayner/",
+        "welcome": "Hey There! I am Hardik Gayner, Second year student at GHRCCST, Nagpur. <br> An aspiring computer science student with strong interest in problem solving and backend development. <br> Won RTH 2024 Hackathon, 1400+ ratings on Leetcode, solved 350+ problems on Leetcode & GeeksForGeeks. ",
+        // "work": () => {
+        //     window.open("https://hydammonia.com/", "_blank");
+        //     return 'Full Stack Developer @ HACPL';
+        // },
+        "whoami": "guest@user. But you should know who you are!",
+    };
+
+    function processCommand(input) {
+        const [commandName, ...args] = input.toLowerCase().split(" ");
+        let response;
+    
+        if (commands[`${commandName} ${args.join(" ")}`]) {
+            response = typeof commands[`${commandName} ${args.join(" ")}`] === "function" ? commands[`${commandName} ${args.join(" ")}`](args) : commands[`${commandName} ${args.join(" ")}`];
+        } else if (commands[commandName]) {
+            response = typeof commands[commandName] === "function" ? commands[commandName](args) : commands[commandName];
+        } else {
+            response = `Command not found: ${commandName}`;
+        }
+    
+        return response;
+    }
+    
+
+    function addNewPrompt() {
+        const newPrompt = document.createElement("p");
+        newPrompt.classList.add("prompt");
+        newPrompt.innerHTML = `hardik@desktop:~$ <span contenteditable="true" class="user-input"></span>`;
+        terminalBody.appendChild(newPrompt);
+
+        const newUserInput = newPrompt.querySelector(".user-input");
+        newUserInput.focus();
+
+        newUserInput.addEventListener("keydown", function(e) {
+            if (e.key === "Enter") {
+                e.preventDefault();
+                const input = newUserInput.textContent.trim();
+                if (input) {
+                    commandHistory.push(input);
+                    historyIndex = commandHistory.length;
+                    newUserInput.setAttribute("contenteditable", "false");
+                    const response = processCommand(input);
+                    if (response) {
+                        const responseElement = document.createElement("p");
+                        responseElement.style.color = 'white'; 
+                        responseElement.innerHTML = response;
+                        terminalBody.appendChild(responseElement);
+                    }
+                    addNewPrompt();
+                }
+            } else if (e.key === "ArrowUp") {
+                if (historyIndex > 0) {
+                    historyIndex--;
+                    newUserInput.textContent = commandHistory[historyIndex];
+                    placeCaretAtEnd(newUserInput);
+                }
+            } else if (e.key === "ArrowDown") {
+                if (historyIndex < commandHistory.length - 1) {
+                    historyIndex++;
+                    newUserInput.textContent = commandHistory[historyIndex];
+                    placeCaretAtEnd(newUserInput);
+                } else {
+                    historyIndex = commandHistory.length;
+                    newUserInput.textContent = "";
+                }
+            }
+        });
+    }
+
+    function placeCaretAtEnd(el) {
+        el.focus();
+        if (typeof window.getSelection != "undefined" && typeof document.createRange != "undefined") {
+            const range = document.createRange();
+            range.selectNodeContents(el);
+            range.collapse(false);
+            const sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(range);
+        } else if (typeof document.body.createTextRange != "undefined") {
+            const textRange = document.body.createTextRange();
+            textRange.moveToElementText(el);
+            textRange.collapse(false);
+            textRange.select();
+        }
+    }
+
+    addNewPrompt();
+});
