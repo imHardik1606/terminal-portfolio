@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <span style="color:${themeColors.textColor};">whoami</span>   - find out who the current user is <br>
                 <span style="color:${themeColors.textColor};">date</span>    - get today's date <br>
                 <span style="color:${themeColors.textColor};">joke</span>    - get random jokes <br>
-                <span style="color:${themeColors.textColor};">greet <name></span>    - greet yourself <br>
+                <span style="color:${themeColors.textColor};">greet [name]</span>    - greet yourself <br>
                 <span style="color:${themeColors.textColor};">list fun</span>  - to get the list of more fun commands <br>
             `;
     },
