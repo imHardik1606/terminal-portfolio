@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
           <span style="color:${themeColors.textColor};">projects</span>    - Check out my projects <br>
           <span style="color:${themeColors.textColor};">pwd</span>         - Show the current working directory <br>
           <span style="color:${themeColors.textColor};">skills</span>      - View my skill set <br>
-          <span style="color:${themeColors.textColor};">chmode</span>      - Change mode <br>
           <span style="color:${themeColors.textColor};">socials</span>     - Discover my social media profiles <br>
           <span style="color:${themeColors.textColor};">themes</span>      - Browse through available themes <br>
           <span style="color:${themeColors.textColor};">welcome</span>     - View the introductory section <br>
