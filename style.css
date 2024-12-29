@@ -23,7 +23,8 @@ body {
     align-items: center;
     background-color: #1a1a1a;
     padding: 10px;
-    border-radius: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
     font-weight: bold;
     color: #00ff00;
     justify-content: space-between; /* Ensures space between buttons and name */
@@ -81,6 +82,10 @@ p {
 a {
     color: #f4f3f3;
     font-weight: bolder;
+}
+
+span{
+    color: gray;
 }
 
 /* Media Queries for Responsiveness */

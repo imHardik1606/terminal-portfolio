@@ -9,29 +9,32 @@ document.addEventListener("DOMContentLoaded", function () {
     headerColor: "white",
   };
 
+
   const commands = {
     help: () => {
       return `
-                <span style="color:${themeColors.textColor};">about</span> - get to know more about me <br>
-                <span style="color:${themeColors.textColor};">clear</span>     - clear the terminal display <br>
-                <span style="color:${themeColors.textColor};">echo</span>      - display custom text or messages <br>
-                <span style="color:${themeColors.textColor};">education</span> - explore my academic journey <br>
-                <span style="color:${themeColors.textColor};">email</span>     - reach out via Email <br>
-                <span style="color:${themeColors.textColor};">exit</span>      - close the current session <br>
-                <span style="color:${themeColors.textColor};">help</span>      - get a list of available commands <br>
-                <span style="color:${themeColors.textColor};">history</span>   - see your command usage history <br>
-                <span style="color:${themeColors.textColor};">projects</span>  - check out my projects <br>
-                <span style="color:${themeColors.textColor};">pwd</span>       - show the current working directory <br>
-                <span style="color:${themeColors.textColor};">skills</span>    - view my skill set <br>
-                <span style="color:${themeColors.textColor};">socials</span>   - discover my social media profiles <br>
-                <span style="color:${themeColors.textColor};">themes</span>    - browse through available themes <br>
-                <span style="color:${themeColors.textColor};">welcome</span>   - view the introductory section <br>
-                <span style="color:${themeColors.textColor};">whoami</span>   - find out who the current user is <br>
-                <span style="color:${themeColors.textColor};">date</span>    - get today's date <br>
-                <span style="color:${themeColors.textColor};">greet "name"</span>    - greet yourself <br>
-                <span style="color:${themeColors.textColor};">list fun</span>  - to get the list of more fun commands <br>
-            `;
-    },
+          <span style="color:${themeColors.textColor};">about</span>       - Learn more about me <br>
+          <span style="color:${themeColors.textColor};">clear</span>       - Clear the terminal display <br>
+          <span style="color:${themeColors.textColor};">echo</span>        - Display custom text or messages <br>
+          <span style="color:${themeColors.textColor};">education</span>   - Explore my academic journey <br>
+          <span style="color:${themeColors.textColor};">email</span>       - Reach out via Email <br>
+          <span style="color:${themeColors.textColor};">exit</span>        - Close the current session <br>
+          <span style="color:${themeColors.textColor};">help</span>        - Get a list of available commands <br>
+          <span style="color:${themeColors.textColor};">history</span>     - See your command usage history <br>
+          <span style="color:${themeColors.textColor};">projects</span>    - Check out my projects <br>
+          <span style="color:${themeColors.textColor};">pwd</span>         - Show the current working directory <br>
+          <span style="color:${themeColors.textColor};">skills</span>      - View my skill set <br>
+          <span style="color:${themeColors.textColor};">chmode</span>      - Change mode <br>
+          <span style="color:${themeColors.textColor};">socials</span>     - Discover my social media profiles <br>
+          <span style="color:${themeColors.textColor};">themes</span>      - Browse through available themes <br>
+          <span style="color:${themeColors.textColor};">welcome</span>     - View the introductory section <br>
+          <span style="color:${themeColors.textColor};">whoami</span>      - Find out who the current user is <br>
+          <span style="color:${themeColors.textColor};">date</span>        - Get today's date <br>
+          <span style="color:${themeColors.textColor};">greet "name"</span> - Greet yourself <br>
+          <span style="color:${themeColors.textColor};">list fun</span>    - Get a list of more fun commands <br>
+      `;
+  },
+  
     themes: `Available themes: <br>ubuntu<br>git-bash<br>sunset<br>sweet<br><br>To change themes, type 'themes go to "theme-name"'.<br>Example: themes go to sunset`,
     "themes go to ubuntu": () => {
       terminal.style.backgroundColor = "#300a24";
@@ -152,8 +155,10 @@ document.addEventListener("DOMContentLoaded", function () {
       const name = args.join(" ");
       return `Hello, ${name}! Welcome to my terminal!`;
     },
-
+    
+  
   };
+
 
   function processCommand(input) {
     const [commandName, ...args] = input.toLowerCase().split(" ");
