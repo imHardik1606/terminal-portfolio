@@ -144,9 +144,13 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
     return jokes[Math.floor(Math.random() * jokes.length)];
     },
-    "greet": (args) => {
-        const name = args[0] || "there";
-        return `Hello, ${name}! How can I assist you today?`;
+    
+    greet: (args) => {
+      if (!args || args.length === 0) {
+        return "Please provide a name. Usage: greet 'name'";
+      }
+      const name = args.join(" ");
+      return `Hello, ${name}! Welcome to my terminal!`;
     },
 
   };
