@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <span style="color:${themeColors.textColor};">Soft Skills</span>: Leadership, Teamwork, Communication, Time Management`;
     },
     socials:
-      "Connect with me on <br>1. LinkedIn: https://www.linkedin.com/in/hardik-gayner-0b2ab32ba/,<br>2. GitHub: https://github.com/imHardik1606,<br>3. Twitter: https://x.com/h_gayner, <br> Leetcode: https://leetcode.com/u/HardikGayner/",
+      "Connect with me on <br>1. LinkedIn: https://www.linkedin.com/in/hardik-gayner-0b2ab32ba/,<br>2. GitHub: https://github.com/imHardik1606,<br>3. Twitter: https://x.com/h_gayner, <br>4. Leetcode: https://leetcode.com/u/HardikGayner/",
     welcome:
       "Hey There! I am Hardik Gayner, Second year student at GHRCCST, Nagpur. <br> An aspiring computer science student with strong interest in problem solving and backend development. <br> Won RTH 2024 Hackathon, 1500+ ratings on Leetcode, solved 400+ problems on Leetcode & GeeksForGeeks. ",
     // "work": () => {
@@ -116,7 +116,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // },
     whoami: "guest@user. But you should know who you are!",
     "list fun": `
-                <span style="color:${themeColors.textColor};">joke</span>    - get random jokes <br>`,
+                <span style="color:${themeColors.textColor};">joke</span>    - get random jokes <br>
+                <span style="color:${themeColors.textColor};">moptivat</span>    - get motivation to debug the issue <br>`,
+
     "date": () => {
       const now = new Date();
       return `Current Date and Time: ${now.toLocaleString()}`;
@@ -155,7 +157,16 @@ document.addEventListener("DOMContentLoaded", function () {
       return `Hello, ${name}! Welcome to my terminal!`;
     },
     
-  
+    motivate: () => {
+      const quotes = [
+          "Don't watch the clock; do what it does. Keep going. - Sam Levenson",
+          "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
+          "The only way to do great work is to love what you do. - Steve Jobs",
+          "Believe you can and you're halfway there. - Theodore Roosevelt"
+      ];
+      return quotes[Math.floor(Math.random() * quotes.length)];
+  },
+
   };
 
 
