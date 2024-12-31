@@ -159,11 +159,19 @@ document.addEventListener("DOMContentLoaded", function () {
     
     motivate: () => {
       const quotes = [
-          "Don't watch the clock; do what it does. Keep going. - Sam Levenson",
-          "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
-          "The only way to do great work is to love what you do. - Steve Jobs",
-          "Believe you can and you're halfway there. - Theodore Roosevelt"
-      ];
+        "Don't watch the clock; do what it does. Keep going. - Sam Levenson",
+        "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
+        "The only way to do great work is to love what you do. - Steve Jobs",
+        "Believe you can and you're halfway there. - Theodore Roosevelt",
+        "Your time is limited, so don't waste it living someone else's life. - Steve Jobs",
+        "It does not matter how slowly you go as long as you do not stop. - Confucius",
+        "The harder you work for something, the greater you'll feel when you achieve it. - Anonymous",
+        "Dream big and dare to fail. - Norman Vaughan",
+        "Keep your face always toward the sunshine—and shadows will fall behind you. - Walt Whitman",
+        "Opportunities don't happen. You create them. - Chris Grosser",
+        "Don't be afraid to give up the good to go for the great. - John D. Rockefeller",
+        "I find that the harder I work, the more luck I seem to have. - Thomas Jefferson"
+    ];    
       return quotes[Math.floor(Math.random() * quotes.length)];
   },
 
