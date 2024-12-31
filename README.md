@@ -1,4 +1,3 @@
-```markdown
 # Terminal Portfolio
 
 Welcome to my **Terminal Portfolio**! This project showcases a command-line interface (CLI) portfolio where you can explore my skills, projects, and achievements directly from the terminal. The goal is to present my professional and personal growth in a simple, easy-to-navigate way.
