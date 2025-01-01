@@ -117,7 +117,8 @@ document.addEventListener("DOMContentLoaded", function () {
     whoami: "guest@user. But you should know who you are!",
     "list fun": `
                 <span style="color:${themeColors.textColor};">joke</span>    - get random jokes <br>
-                <span style="color:${themeColors.textColor};">motivate</span>    - get motivation to debug the issue <br>`,
+                <span style="color:${themeColors.textColor};">motivate</span>    - get motivation to debug the issue <br>
+                <span style="color:${themeColors.textColor};">funfact</span>    - get fun facts<br>`,
 
     "date": () => {
       const now = new Date();
