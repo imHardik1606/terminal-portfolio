@@ -175,6 +175,22 @@ document.addEventListener("DOMContentLoaded", function () {
       return quotes[Math.floor(Math.random() * quotes.length)];
   },
 
+  funfact: () => {
+    const funfacts = [
+      "Did you know? The first computer 'bug' was an actual bug—a moth found trapped in a relay of the Mark II computer in 1947!",
+      "Fun fact: The first email was sent by Ray Tomlinson to himself in 1971, testing the '@' symbol in email addresses.",
+      "Did you know? The first 1GB hard drive, introduced in 1980, weighed over 500 pounds and cost $40,000!",
+      "Fun fact: The name 'Google' was derived from the mathematical term 'googol,' meaning the number 1 followed by 100 zeros.",
+      "Did you know? The first website ever created is still live at info.cern.ch.",
+      "Fun fact: The QWERTY keyboard was designed to prevent typewriter jams, not for typing efficiency!",
+      "Did you know? Over 90% of the world’s currency exists only in digital form.",
+      "Fun fact: The first-ever video uploaded to YouTube is titled 'Me at the zoo,' uploaded by co-founder Jawed Karim in 2005.",
+      "Did you know? The first domain ever registered was Symbolics.com in 1985, and it's still active!",
+      "Fun fact: The password for the computer systems used in the U.S. nuclear missile program was once '00000000' for nearly 20 years!"
+    ];
+    return funfacts[Math.floor(Math.random() * funfacts.length)];
+  },  
+
   };
 
 
