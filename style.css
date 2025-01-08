@@ -20,13 +20,36 @@ body {
 
 .terminal-header {
     display: flex;
+    height: 2rem;
+    position: relative;
     align-items: center;
+    text-align: center;
     justify-content: space-between; /* Ensures space between btns and terminal name */
     padding: 10px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color: #333; /* Example background for terminal header */
-    color: white; /* Example text color */
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #8ec5fc);
+    color: white;
+    background-size: 400% 400%;
+    animation: gradientBG 5s ease infinite;
+    /* Example text color */
 }
+
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.terminal-header h1 { 
+    position: absolute;
+    left: 50%; /* Move to the middle of the container */
+    transform: translateX(-50%); /* Ensure perfect centering by adjusting for width */
+    margin: 0; /* Avoid default margin pushing */
+    font-size: 16px;
+    white-space: nowrap; /* Prevent text from breaking into a new line */
+}
+
 
 .btns {
     display: flex;
