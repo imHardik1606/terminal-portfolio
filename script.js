@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
     headerColor: "white",
   };
 
-
   const commands = {
     help: () => {
       return `
@@ -32,9 +31,10 @@ document.addEventListener("DOMContentLoaded", function () {
           <span style="color:${themeColors.textColor};">greet "name"</span> - Greet yourself <br>
           <span style="color:${themeColors.textColor};">list fun</span>    - Get a list of more fun commands <br>
       `;
-  },
-  
-    themes: `Available themes: <br>ubuntu<br>git-bash<br>sunset<br>sweet<br>code editor<br>night<br>midnight<br>electric<br>aurora lights<br>neon-pulse<br>To change themes, type 'themes go to "theme-name"'.<br>Example: themes go to sunset`,
+    },
+
+    themes: `Available themes: <br>ubuntu<br>git-bash<br>sweet<br>code editor<br>night<br>midnight<br>electric<br>aurora lights<br>neon pulse<br>To change themes, type 'themes go to "theme-name"'.<br>Example: themes go to electric`,
+
     "themes go to ubuntu": () => {
       terminal.style.backgroundColor = "#300a24";
       terminalHeader.style.backgroundColor = "#595959";
@@ -65,32 +65,32 @@ document.addEventListener("DOMContentLoaded", function () {
     },
 
     "themes go to code editor": () => {
-      terminalBody.classList.add('code-editor');
+      terminalBody.classList.add("code-editor");
       return "Switched to code editor !";
     },
 
     "themes go to night": () => {
-      terminalBody.classList.add('night');
+      terminalBody.classList.add("night");
       return "Switched to night !";
     },
 
     "themes go to midnight": () => {
-      terminalBody.classList.add('midnight');
+      terminalBody.classList.add("midnight");
       return "Switched to midnight!";
     },
 
     "themes go to electric": () => {
-      terminalBody.classList.add('electric');
+      terminalBody.classList.add("electric");
       return "Switched to electric !";
     },
 
     "themes go to aurora lights": () => {
-      terminalBody.classList.add('aurora-lights');
+      terminalBody.classList.add("aurora-lights");
       return "Switched to aurora lights !";
     },
 
     "themes go to neon pulse": () => {
-      terminalBody.classList.add('neon-pulse');
+      terminalBody.classList.add("neon-pulse");
       return "Switched to neon pulse !";
     },
 
@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
     exit: () => window.close(),
     history: () => commandHistory.join("<br>"),
     projects:
-      "You can visit my github to see all my projects <hr> These are my personal favorites: <br>1. travelBuddy - Find Travel Companions and Share Costs<br> A platform where users can connect with travel companions heading to the same destination. Users can share costs for accommodation, food, and other expenses, and upload detailed travel itineraries to collaborate seamlessly. Built with ExpressJS, MongoDB, and EJS.  <br> <img src='/images/counselai.png' style='width:75%; height:auto;'> &nbsp; <a href=''> Link </a> <br>2. MERN Chat - Real-Time Messaging App<br> A feature-rich real-time chat application built with the MERN stack. It includes private and group messaging, live status indicators, and secure authentication using JWT. The app focuses on performance, scalability, and an intuitive UI.  <br><img src='/images/arbotique.png' style='width:75%; height:auto;'> &nbsp; <a href=''> Link </a> <br>3. SuperCar Rental - Car Rental Management Platform<br> An online platform for renting high-end cars with features like vehicle availability tracking, rental cost calculation, and booking history. Users can browse car models, book vehicles, and track their bookings effortlessly. Built with React, Node.js, and MongoDB.  <br><img src='/images/mediwise.png' style='width:75%; height: auto;'> &nbsp; <a href=''> Link </a> ",
+      "You can visit my github to see all my projects <hr> These are my personal favorites: <br>1. <b>TravelBuddy</b> - Find Travel Companions and Share Costs<br> A platform where users can connect with travel companions heading to the same destination. Users can share costs for accommodation, food, and other expenses, and upload detailed travel itineraries to collaborate seamlessly. Built with ExpressJS, MongoDB, and EJS.  <br> <div style='width:30%; height: 50%; padding: 2%; border: 2px solid white; margin:4%'>Work in Progress</div> &nbsp; <a href='' style='padding: 2%; margin:4%'> Link </a> <br>2. <b>MERN Chat</b> - Real-Time Messaging App<br> A feature-rich real-time chat application built with the MERN stack. It includes private and group messaging, live status indicators, and secure authentication using JWT. The app focuses on performance, scalability, and an intuitive UI.  <br><div style='width:30%; height: 50%; padding: 2%; border: 2px solid white; margin:4%'>Work in Progress</div> &nbsp; <a href='' style='padding: 2%; margin:4%'> Link </a> <br>3. <b>SuperCar Rental</b> - Car Rental Management Platform<br> An online platform for renting high-end cars with features like vehicle availability tracking, rental cost calculation, and booking history. Users can browse car models, book vehicles, and track their bookings effortlessly. Built with React, Node.js, and MongoDB.  <br><div style='width:30%; height: 50%; padding: 2%; border: 2px solid white; margin:4%'>Work in Progress</div> <a href='' style='padding: 2%; margin:4%'> Link </a> ",
     pwd: "You are currently in the root directory.",
     skills: () => {
       return `I am a fast learner and highly motivated individual. <hr> 
@@ -141,12 +141,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 <span style="color:${themeColors.textColor};">motivate</span>    - get motivation to debug the issue <br>
                 <span style="color:${themeColors.textColor};">funfact</span>    - get fun facts<br>`,
 
-    "date": () => {
+    date: () => {
       const now = new Date();
       return `Current Date and Time: ${now.toLocaleString()}`;
     },
-    "joke": () => {
-    const jokes = [
+    joke: () => {
+      const jokes = [
         "<b>Why do programmers prefer dark mode?</b> <br> Because light attracts bugs!",
         "<b>Why don't programmers like nature?</b> <br> It has too many bugs.",
         "<b>How many programmers does it take to change a light bulb?</b> <br> None, it's a hardware problem!",
@@ -166,11 +166,11 @@ document.addEventListener("DOMContentLoaded", function () {
         "<b>What do you get when you cross a programmer with a musician?</b> <br> Code that’s in C++.",
         "<b>Why was the programmer arrested?</b> <br> He was caught hacking time.",
         "<b>Why do programmers love coffee?</b> <br> Because it’s their source of code energy.",
-        "<b>What’s a programmer’s least favorite candy?</b> <br> Syntax errors."
-    ];
-    return jokes[Math.floor(Math.random() * jokes.length)];
+        "<b>What’s a programmer’s least favorite candy?</b> <br> Syntax errors.",
+      ];
+      return jokes[Math.floor(Math.random() * jokes.length)];
     },
-    
+
     greet: (args) => {
       if (!args || args.length === 0) {
         return "Please provide a name. Usage: greet 'name'";
@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const name = args.join(" ");
       return `Hello, ${name}! Welcome to my terminal!`;
     },
-    
+
     motivate: () => {
       const quotes = [
         "<b> Don't watch the clock; do what it does. Keep going. - Sam Levenson</b>",
@@ -192,29 +192,27 @@ document.addEventListener("DOMContentLoaded", function () {
         "<b> Keep your face always toward the sunshine—and shadows will fall behind you. - Walt Whitman</b>",
         "<b> Opportunities don't happen. You create them. - Chris Grosser</b>",
         "<b> Don't be afraid to give up the good to go for the great. - John D. Rockefeller</b>",
-        "<b> I find that the harder I work, the more luck I seem to have. - Thomas Jefferson</b>"
-    ];    
+        "<b> I find that the harder I work, the more luck I seem to have. - Thomas Jefferson</b>",
+      ];
       return quotes[Math.floor(Math.random() * quotes.length)];
-  },
+    },
 
-  funfact: () => {
-    const funfacts = [
-      "Did you know? The first computer 'bug' was an actual bug—a moth found trapped in a relay of the Mark II computer in 1947!",
-      "Fun fact: The first email was sent by Ray Tomlinson to himself in 1971, testing the '@' symbol in email addresses.",
-      "Did you know? The first 1GB hard drive, introduced in 1980, weighed over 500 pounds and cost $40,000!",
-      "Fun fact: The name 'Google' was derived from the mathematical term 'googol,' meaning the number 1 followed by 100 zeros.",
-      "Did you know? The first website ever created is still live at info.cern.ch.",
-      "Fun fact: The QWERTY keyboard was designed to prevent typewriter jams, not for typing efficiency!",
-      "Did you know? Over 90% of the world’s currency exists only in digital form.",
-      "Fun fact: The first-ever video uploaded to YouTube is titled 'Me at the zoo,' uploaded by co-founder Jawed Karim in 2005.",
-      "Did you know? The first domain ever registered was Symbolics.com in 1985, and it's still active!",
-      "Fun fact: The password for the computer systems used in the U.S. nuclear missile program was once '00000000' for nearly 20 years!"
-    ];
-    return funfacts[Math.floor(Math.random() * funfacts.length)];
-  },  
-
+    funfact: () => {
+      const funfacts = [
+        "Did you know? The first computer 'bug' was an actual bug—a moth found trapped in a relay of the Mark II computer in 1947!",
+        "Fun fact: The first email was sent by Ray Tomlinson to himself in 1971, testing the '@' symbol in email addresses.",
+        "Did you know? The first 1GB hard drive, introduced in 1980, weighed over 500 pounds and cost $40,000!",
+        "Fun fact: The name 'Google' was derived from the mathematical term 'googol,' meaning the number 1 followed by 100 zeros.",
+        "Did you know? The first website ever created is still live at info.cern.ch.",
+        "Fun fact: The QWERTY keyboard was designed to prevent typewriter jams, not for typing efficiency!",
+        "Did you know? Over 90% of the world’s currency exists only in digital form.",
+        "Fun fact: The first-ever video uploaded to YouTube is titled 'Me at the zoo,' uploaded by co-founder Jawed Karim in 2005.",
+        "Did you know? The first domain ever registered was Symbolics.com in 1985, and it's still active!",
+        "Fun fact: The password for the computer systems used in the U.S. nuclear missile program was once '00000000' for nearly 20 years!",
+      ];
+      return funfacts[Math.floor(Math.random() * funfacts.length)];
+    },
   };
-
 
   function processCommand(input) {
     const [commandName, ...args] = input.toLowerCase().split(" ");
