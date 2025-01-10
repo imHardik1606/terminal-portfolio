@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
       `;
   },
   
-    themes: `Available themes: <br>ubuntu<br>git-bash<br>sunset<br>sweet<br><br>To change themes, type 'themes go to "theme-name"'.<br>Example: themes go to sunset`,
+    themes: `Available themes: <br>ubuntu<br>git-bash<br>sunset<br>sweet<br>code editor<br>night<br>midnight<br>electric<br>aurora lights<br>neon-pulse<br>To change themes, type 'themes go to "theme-name"'.<br>Example: themes go to sunset`,
     "themes go to ubuntu": () => {
       terminal.style.backgroundColor = "#300a24";
       terminalHeader.style.backgroundColor = "#595959";
@@ -54,16 +54,6 @@ document.addEventListener("DOMContentLoaded", function () {
       return "Switched to Git-Bash theme!";
     },
 
-    "themes go to sunset": () => {
-      terminal.style.background = "linear-gradient(in oklab, #ffff00, red)";
-      terminalHeader.style.background =
-        "linear-gradient(135deg, #ff7f50, #ff4500)";
-      terminalHeader.style.color = "#ffffff";
-      terminalBody.style.color = "#fffb00";
-      themeColors.textColor = "#fffb00";
-      return "Switched to Sunset theme!";
-    },
-
     "themes go to sweet": () => {
       terminal.style.background = "linear-gradient(135deg, #ffb6c1, #ff69b4)";
       terminalHeader.style.background =
@@ -73,6 +63,37 @@ document.addEventListener("DOMContentLoaded", function () {
       themeColors.textColor = "#ff0f9f";
       return "Switched to Sweet theme!";
     },
+
+    "themes go to code editor": () => {
+      terminalBody.classList.add('code-editor');
+      return "Switched to code editor !";
+    },
+
+    "themes go to night": () => {
+      terminalBody.classList.add('night');
+      return "Switched to night !";
+    },
+
+    "themes go to midnight": () => {
+      terminalBody.classList.add('midnight');
+      return "Switched to midnight!";
+    },
+
+    "themes go to electric": () => {
+      terminalBody.classList.add('electric');
+      return "Switched to electric !";
+    },
+
+    "themes go to aurora lights": () => {
+      terminalBody.classList.add('aurora-lights');
+      return "Switched to aurora lights !";
+    },
+
+    "themes go to neon pulse": () => {
+      terminalBody.classList.add('neon-pulse');
+      return "Switched to neon pulse !";
+    },
+
     about:
       "Curiously driven backend developer.<br>Passionate, Backend dev who like to participate in hackathons + solving silly bugs + building awesome projects💖 <br> Always ready to help out and learn",
     // "portfolio": () => {

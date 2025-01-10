@@ -1,171 +1,227 @@
 body {
-    background-color: #d2d2d2;
-    color: #d2d2d2;
-    font-family: 'Courier New', Courier, monospace;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    font-size:larger;
-} 
+  background-color: #d2d2d2;
+  color: #d2d2d2;
+  font-family: "Courier New", Courier, monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-size: larger;
+}
 
 .terminal {
-    background-color: #1d1f21;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 800px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    margin: 10px;  /* Add margin for smaller screens */
+  background-color: #1d1f21;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 800px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  margin: 10px; /* Add margin for smaller screens */
 }
 
 .terminal-header {
-    display: flex;
-    height: 2rem;
-    position: relative;
-    align-items: center;
-    text-align: center;
-    justify-content: space-between; /* Ensures space between btns and terminal name */
-    padding: 10px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #8ec5fc);
-    color: white;
-    background-size: 400% 400%;
-    animation: gradientBG 5s ease infinite;
-    /* Example text color */
+  display: flex;
+  height: 2rem;
+  position: relative;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between; /* Ensures space between btns and terminal name */
+  padding: 10px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #8ec5fc);
+  color: white;
+  background-size: 400% 400%;
+  animation: gradientBG 5s ease infinite;
+  /* Example text color */
 }
-
 
 @keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-.terminal-header h1 { 
-    position: absolute;
-    left: 50%; /* Move to the middle of the container */
-    transform: translateX(-50%); /* Ensure perfect centering by adjusting for width */
-    margin: 0; /* Avoid default margin pushing */
-    font-size: 16px;
-    white-space: nowrap; /* Prevent text from breaking into a new line */
+.terminal-header h1 {
+  position: absolute;
+  left: 50%; /* Move to the middle of the container */
+  transform: translateX(
+    -50%
+  ); /* Ensure perfect centering by adjusting for width */
+  margin: 0; /* Avoid default margin pushing */
+  font-size: 16px;
+  white-space: nowrap; /* Prevent text from breaking into a new line */
 }
-
 
 .btns {
-    display: flex;
-    gap: 10px; /* Spacing between buttons */
+  display: flex;
+  gap: 10px; /* Spacing between buttons */
 }
 
 .btn {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
 }
 
 .close {
-    background-color: #FF605C;
+  background-color: #ff605c;
 }
 
 .minimize {
-    background-color: #FFBD44;
+  background-color: #ffbd44;
 }
 
 .maximize {
-    background-color: #00CA4E;
+  background-color: #00ca4e;
 }
 
 .terminal-name {
-    flex: 1; /* Takes up the remaining space */
-    text-align: center; /* Centers text within the terminal-name div */
-    font-size: 16px;
-    font-weight: bold;
+  flex: 1; /* Takes up the remaining space */
+  text-align: center; /* Centers text within the terminal-name div */
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .terminal-body {
-    padding: 20px;
-    line-height: 1.5;
-    
+  padding: 20px;
+  line-height: 1.5;
+  background-color: #2d3748;
 }
 
+.code-editor{
+    background: linear-gradient(-45deg, #282c34, #21252b, #3c3f41, #98c379);
+background-size: 400% 400%;
+animation: gradientBG 6s ease infinite;
+}
+.night{
+    background: linear-gradient(-45deg, #1a202c, #2d3748, #4a5568, #2b6cb0);
+background-size: 400% 400%;
+animation: gradientBG 4s ease infinite;
+}
+
+.midnight{
+    background: linear-gradient(-45deg, #1e293b, #0f172a, #334155, #668dc4);
+background-size: 400% 400%;
+animation: gradientBG 6s ease infinite;
+}
+
+.electric{
+    background: linear-gradient(-45deg, #6441a5, #2a0845, #7e7cec, #ff7eb3);
+background-size: 400% 400%;
+animation: gradientBG 5s ease infinite;
+
+}
+.aurora-lights{
+    background: linear-gradient(-45deg, #00c6ff, #0072ff, #00f260, #0575e6);
+background-size: 400% 400%;
+animation: gradientBG 5s ease infinite;
+color: #1d1f21;
+}
+
+.neon-pulse {
+  background: linear-gradient(-45deg, #ff6f91, #ffc3a0, #c471ed, #f64f59);
+  background-size: 400% 400%;
+  animation: gradientBG 5s ease infinite;
+  color: #1d1f21;
+}
+
+@keyframes gradientBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
 .prompt {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .user-input {
-    outline: none;
-    border: none;
-    background: none;
-    color: #f4f3f3;
-    flex-grow: 1;
-    display: inline-block;
-    margin-left: 10px;
+  outline: none;
+  border: none;
+  background: none;
+  color: #f4f3f3;
+  flex-grow: 1;
+  display: inline-block;
+  margin-left: 10px;
 }
 
 p {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
 a {
-    color: #f4f3f3;
-    font-weight: bolder;
+  color: #f4f3f3;
+  font-weight: bolder;
 }
 
-span{
-    color: gray;
+span {
+  color: gray;
 }
 
 /* Media Queries for Responsiveness */
 
 /* For tablets and smaller screens (less than 768px) */
 @media (max-width: 768px) {
-    body {
-        font-size: medium;
-    }
+  body {
+    font-size: medium;
+  }
 
-    .terminal {
-        width: 90%;
-        max-width: 100%;
-    }
+  .terminal {
+    width: 90%;
+    max-width: 100%;
+  }
 
-    .terminal-header {
-        flex-direction: column; /* Stack buttons and terminal name */
-        align-items: flex-start;
-    }
+  .terminal-header {
+    flex-direction: column; /* Stack buttons and terminal name */
+    align-items: flex-start;
+  }
 
-    .terminal-name {
-        margin-top: 10px;
-        text-align: center; /* Center text for small screens */
-    }
+  .terminal-name {
+    margin-top: 10px;
+    text-align: center; /* Center text for small screens */
+  }
 
-    .btn {
-        width: 15px; /* Smaller buttons */
-        height: 15px;
-    }
+  .btn {
+    width: 15px; /* Smaller buttons */
+    height: 15px;
+  }
 }
 
 /* For mobile devices (less than 480px) */
 @media (max-width: 480px) {
-    body {
-        font-size: small;
-    }
+  body {
+    font-size: small;
+  }
 
-    .terminal {
-        width: 95%;
-        max-width: 100%;
-    }
+  .terminal {
+    width: 95%;
+    max-width: 100%;
+  }
 
-    .terminal-header {
-        padding: 8px;
-    }
+  .terminal-header {
+    padding: 8px;
+  }
 
-    .btn {
-        width: 12px; /* Even smaller buttons */
-        height: 12px;
-    }
+  .btn {
+    width: 12px; /* Even smaller buttons */
+    height: 12px;
+  }
 
-    .terminal-body {
-        padding: 15px;
-    }
+  .terminal-body {
+    padding: 15px;
+  }
 }
