@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const terminalBody = document.querySelector(".terminal-body");
   const terminalHeader = document.querySelector(".terminal-header");
   const terminal = document.querySelector(".terminal");
+  const icon = document.createElement("i");
   const commandHistory = [];
   let historyIndex = -1;
   let themeColors = {
@@ -33,7 +34,27 @@ document.addEventListener("DOMContentLoaded", function () {
       `;
     },
 
-    themes: `Available themes: <br>ubuntu<br>git-bash<br>sweet<br>code editor<br>night<br>midnight<br>electric<br>aurora lights<br>neon pulse<br>To change themes, type 'themes go to "theme-name"'.<br>Example: themes go to electric`,
+    themes: `<div style="display: flex; flex-wrap: wrap; gap: 20px; max-width: 600px;">
+      <div style="flex: 1; min-width: 200px;">
+        <ul>
+          <li>ubuntu</li>
+          <li>git-bash</li>
+          <li>sweet</li>
+          <li>code editor</li>
+        </ul>
+      </div>
+      <div style="flex: 1; min-width: 200px;">
+        <ul>
+          <li>night</li>
+          <li>midnight</li>
+          <li>electric</li>
+          <li>aurora lights</li>
+          <li>neon pulse</li>
+        </ul>
+      </div>
+    </div>
+    <p>To change themes, type <code>themes go to [theme-name]</code>.</p>
+    <p>Example: <code>themes go to electric</code></p>`,
 
     "themes go to ubuntu": () => {
       terminal.style.backgroundColor = "#300a24";
@@ -56,85 +77,145 @@ document.addEventListener("DOMContentLoaded", function () {
 
     "themes go to sweet": () => {
       terminal.style.background = "linear-gradient(135deg, #ffb6c1, #ff69b4)";
-      terminalHeader.style.background =
-        "linear-gradient(135deg, #ffd9df, #ff69b4)";
+      terminalBody.style.background =
+        "linear-gradient(135deg, #ffd9df,rgb(250, 160, 172),#ff69b4)";
       terminalHeader.style.color = "#ff178b";
       terminalBody.style.color = "#ff178b";
       themeColors.textColor = "#ff0f9f";
+      terminalBody.style.backgroundSize = "400% 400%";
+      terminalBody.style.animation = "gradientBG 8s ease infinite";
       return "Switched to Sweet theme!";
     },
 
     "themes go to code editor": () => {
-      terminalBody.classList.add("code-editor");
+      terminalBody.style.background =
+        "linear-gradient(-45deg,rgb(73, 80, 94),rgb(105, 123, 151), #3c3f41, #98c379)";
+      terminalBody.style.backgroundSize = "400% 400%";
+      terminalBody.style.color = "#d2d2d2";
+      terminalBody.style.animation = "gradientBG 8s ease infinite";
       return "Switched to code editor !";
     },
 
     "themes go to night": () => {
-      terminalBody.classList.add("night");
+      terminalBody.style.background =
+        "linear-gradient(-45deg, #1a202c, #2d3748, #4a5568, #2b6cb0,rgb(190, 241, 153))";
+      terminalBody.style.backgroundSize = "400% 400%";
+      terminalBody.style.color = "#d2d2d2";
+      terminalBody.style.animation = "gradientBG 4s ease infinite";
       return "Switched to night !";
     },
 
     "themes go to midnight": () => {
-      terminalBody.classList.add("midnight");
+      terminalBody.style.background =
+        "linear-gradient(-45deg, #1e293b, #0f172a, #334155, #668dc4)";
+      terminalBody.style.backgroundSize = "400% 400%";
+      terminalBody.style.color = "#d2d2d2";
+      terminalBody.style.animation = "gradientBG 4s ease infinite";
       return "Switched to midnight!";
     },
 
     "themes go to electric": () => {
-      terminalBody.classList.add("electric");
+      terminalBody.style.background =
+        "linear-gradient(-45deg, #6441a5, #2a0845, #7e7cec, #ff7eb3)";
+      terminalBody.style.backgroundSize = "400% 400%";
+      terminalBody.style.color = "#d2d2d2";
+      terminalBody.style.animation = "gradientBG 4s ease infinite";
       return "Switched to electric !";
     },
 
     "themes go to aurora lights": () => {
-      terminalBody.classList.add("aurora-lights");
+      terminalBody.style.background =
+        "linear-gradient(-45deg,#41C3E7,#3DF39E,#4BEC8B,#66EB61)";
+      terminalBody.style.backgroundSize = "400% 400%";
+      terminalBody.style.color = "#8050a6";
+      terminalBody.style.animation = "gradientBG 4s ease infinite";
       return "Switched to aurora lights !";
     },
 
     "themes go to neon pulse": () => {
-      terminalBody.classList.add("neon-pulse");
+      terminalBody.style.background =
+        "linear-gradient(-45deg, #ff6f91, #ffc3a0, #c471ed, #f64f59)";
+      terminalBody.style.backgroundSize = "400% 400%";
+      terminalBody.style.color = "#63686e";
+      terminalBody.style.animation = "gradientBG 4s ease infinite";
       return "Switched to neon pulse !";
     },
 
     about:
       "Curiously driven backend developer.<br>Passionate, Backend dev who like to participate in hackathons + solving silly bugs + building awesome projects💖 <br> Always ready to help out and learn",
-    // "portfolio": () => {
-    //     window.open("https://hardikportfolio.com/", "_blank");
-    //     return '';
-    // },
+
     clear: () => {
       terminalBody.innerHTML = "";
       return "";
     },
+
     echo: (args) => args.join(" "),
+
     education: () => {
       return `<span style="color:${themeColors.textColor};">G.H. Raisoni College of Commerce, Science and Technology</span> | 2023 - 2026 <br><span style="color:${themeColors.textColor};">Dr. Ambedkar College</span> | 2020 - 2022 <br><span style="color:${themeColors.textColor};">Shahu's Garden High School</span> | till 2020`;
     },
+
     email: () => {
       window.open("mailto:hardikgayner@gmail.com");
       return "You can reach me at: hardikgayner@gmail.com";
     },
     exit: () => window.close(),
+
     history: () => commandHistory.join("<br>"),
+
     projects:
-      "You can visit my github to see all my projects <hr> These are my personal favorites: <br>1. <b>TravelBuddy</b> - Find Travel Companions and Share Costs<br> A platform where users can connect with travel companions heading to the same destination. Users can share costs for accommodation, food, and other expenses, and upload detailed travel itineraries to collaborate seamlessly. Built with ExpressJS, MongoDB, and EJS.  <br> <div style='width:30%; height: 50%; padding: 2%; border: 2px solid white; margin:4%'>Work in Progress</div> &nbsp; <a href='' style='padding: 2%; margin:4%'> Link </a> <br>2. <b>MERN Chat</b> - Real-Time Messaging App<br> A feature-rich real-time chat application built with the MERN stack. It includes private and group messaging, live status indicators, and secure authentication using JWT. The app focuses on performance, scalability, and an intuitive UI.  <br><div style='width:30%; height: 50%; padding: 2%; border: 2px solid white; margin:4%'>Work in Progress</div> &nbsp; <a href='' style='padding: 2%; margin:4%'> Link </a> <br>3. <b>SuperCar Rental</b> - Car Rental Management Platform<br> An online platform for renting high-end cars with features like vehicle availability tracking, rental cost calculation, and booking history. Users can browse car models, book vehicles, and track their bookings effortlessly. Built with React, Node.js, and MongoDB.  <br><div style='width:30%; height: 50%; padding: 2%; border: 2px solid white; margin:4%'>Work in Progress</div> <a href='' style='padding: 2%; margin:4%'> Link </a> ",
+      `<strong>Projects:</strong>
+      You can visit my <a href="https://github.com/imHardik1606" target="_blank"><strong>GitHub</strong></a> to see all my projects. <hr>
+      These are my personal favorites: <br>
+      1. <strong>TravelBuddy</strong> - Find Travel Companions and Share Costs <br>
+      A platform where users can connect with travel companions heading to the same destination. Users can share costs for accommodation, food, and other expenses, and upload detailed travel itineraries to collaborate seamlessly. Built with <strong>ExpressJS</strong>, <strong>MongoDB</strong>, and <strong>EJS</strong>. <br>
+      <div style='width:30%; height: 50%; padding: 2%; border: 2px solid white; margin:4%'>Work in Progress</div> &nbsp; 
+      <a href='' style='padding: 2%; margin:4%'> Link </a> <br>
+
+      2. <strong>MERN Chat</strong> - Real-Time Messaging App <br>
+      A feature-rich real-time chat application built with the <strong>MERN stack</strong>. It includes private and group messaging, live status indicators, and secure authentication using <strong>JWT</strong>. The app focuses on performance, scalability, and an intuitive UI. <br>
+      <div style='width:30%; height: 50%; padding: 2%; border: 2px solid white; margin:4%'>Work in Progress</div> &nbsp; 
+      <a href='https://github.com/imHardik1606/mern-chat' style='padding: 2%; margin:4%'> Link </a> <br>
+
+      3. <strong>SuperCar Rental</strong> - Car Rental Management Platform <br>
+      An online platform for renting high-end cars with features like vehicle availability tracking, rental cost calculation, and booking history. Users can browse car models, book vehicles, and track their bookings effortlessly. Built with <strong>React</strong>, <strong>Node.js</strong>, and <strong>MongoDB</strong>. <br>
+      <div style='width:30%; height: 50%; padding: 2%; border: 2px solid white; margin:4%'>Work in Progress</div> 
+      <a href='' style='padding: 2%; margin:4%'> Link </a>`,
+
     pwd: "You are currently in the root directory.",
+
     skills: () => {
-      return `I am a fast learner and highly motivated individual. <hr> 
-        <span style="color:${themeColors.textColor};">Languages</span>: Java, JavaScript, C++, Python <br>
-        <span style="color:${themeColors.textColor};">Currently Learning</span>: TypeScript, Golang, Flutter  <br>
-        <span style="color:${themeColors.textColor};">Frameworks & Libraries</span>: Node.js, Express.js, React, EJS, Bootstrap, Tailwind, Material UI <br>
-        <span style="color:${themeColors.textColor};">Tools</span>: Git, Postman, VS Code <br>
-        <span style="color:${themeColors.textColor};">Database Technologies</span>: MySQL, MongoDB, PostreSQL <br>
-        <span style="color:${themeColors.textColor};">Strengths</span>: DSA, Backend Development, REST APIs, Problem Solving <br>
-        <span style="color:${themeColors.textColor};">Soft Skills</span>: Leadership, Teamwork, Communication, Time Management`;
-    },
-    socials:
-      "Connect with me on <br>1. LinkedIn: https://www.linkedin.com/in/hardik-gayner-0b2ab32ba/,<br>2. GitHub: https://github.com/imHardik1606,<br>3. Twitter: https://x.com/h_gayner, <br>4. Leetcode: https://leetcode.com/u/HardikGayner/",
-    welcome:
-      "Hey There! I am Hardik Gayner, Second year student at GHRCCST, Nagpur. <br> An aspiring computer science student with strong interest in problem solving and backend development. <br> Won RTH 2024 Hackathon, 1500+ ratings on Leetcode, solved 400+ problems on Leetcode & GeeksForGeeks. ",
-    // "work": () => {
-    //     window.open("https://hydammonia.com/", "_blank");
-    //     return 'Full Stack Developer @ HACPL';
-    // },
+      return `
+        I am a fast learner and highly motivated individual. <hr> 
+        <span style="color:${themeColors.textColor};"><strong>Programming Languages</strong>:</span> Java, JavaScript, C++, Python <br>
+        <span style="color:${themeColors.textColor};"><strong>Currently Learning</strong>:</span> TypeScript, Golang, Flutter  <br>
+        <span style="color:${themeColors.textColor};"><strong>Frameworks & Libraries</strong>:</span> Node.js, Express.js, React.js, EJS, Bootstrap, Tailwind, Material UI <br>
+        <span style="color:${themeColors.textColor};"><strong>Tools</strong>:</span> Git, Postman, VS Code <br>
+        <span style="color:${themeColors.textColor};"><strong>Database Technologies</strong>:</span> MySQL, MongoDB, PostgreSQL <br>
+        <span style="color:${themeColors.textColor};"><strong>Strengths</strong>:</span> DSA, Backend Development, REST APIs, Problem Solving <br>
+        <span style="color:${themeColors.textColor};"><strong>Soft Skills</strong>:</span> Leadership, Teamwork, Communication, Time Management
+      `;
+    },    
+
+    // socials:
+    //   "Connect with me on <br>1. LinkedIn: https://www.linkedin.com/in/hardik-gayner-0b2ab32ba,<br>2. GitHub: https://github.com/imHardik1606,<br>3. Twitter: https://x.com/h_gayner, <br>4. Leetcode: https://leetcode.com/u/knight_16",
+
+    socials: `
+  Connect with me on <br>
+  <div style="font-family: 'Times New Roman', Times, serif;">
+  1. <a href="https://www.linkedin.com/in/hardik-gayner-0b2ab32ba" target="_blank"><i class="fab fa-linkedin">&nbsp; &nbsp;</i>LinkedIn</a><br>
+  2. <a href="https://github.com/imHardik1606" target="_blank"><i class="fab fa-github">&nbsp; &nbsp;</i>GitHub</a><br>
+  3. <a href="https://x.com/h_gayner" target="_blank"><i class="fab fa-twitter">&nbsp; &nbsp;</i>Twitter</a><br>
+  4. <a href="https://leetcode.com/u/knight_16" target="_blank"><i class="fa-solid fa-code">&nbsp; &nbsp;</i>Leetcode</a>
+  </div>
+  `,
+
+    welcome: `Hey there! I am <strong>Hardik Gayner</strong>, a second-year student at GHRCCST, Nagpur. <br>
+    An aspiring <strong>Computer Science</strong> enthusiast with a passion for <strong>problem-solving</strong> and <strong>backend development</strong>. <br>
+    Winner of <strong>RTH 2024 Hackathon</strong>, with <strong>1500+ ratings on LeetCode</strong> and <strong>400+ problems solved</strong> on <strong>LeetCode</strong> & <strong>GeeksForGeeks</strong>. <br>
+    Constantly learning, coding, and striving to improve with every challenge I tackle!
+    `,
+
     whoami: "guest@user. But you should know who you are!",
     "list fun": `
                 <span style="color:${themeColors.textColor};">joke</span>    - get random jokes <br>
@@ -145,6 +226,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const now = new Date();
       return `Current Date and Time: ${now.toLocaleString()}`;
     },
+
     joke: () => {
       const jokes = [
         "<b>Why do programmers prefer dark mode?</b> <br> Because light attracts bugs!",

@@ -7,7 +7,6 @@ body {
   align-items: center;
   margin: 0;
   font-size: larger;
-  
 }
 
 .terminal {
@@ -35,8 +34,6 @@ body {
   animation: gradientBG 5s ease infinite;
   /* Example text color */
 }
-
-
 
 .terminal-header h1 {
   position: absolute;
@@ -86,54 +83,17 @@ body {
   background-color: #2d3748;
 }
 
-.code-editor{
-    background: linear-gradient(-45deg, #282c34, #21252b, #3c3f41, #98c379);
-background-size: 400% 400%;
-animation: gradientBG 6s ease infinite;
-}
-.night{
-    background: linear-gradient(-45deg, #1a202c, #2d3748, #4a5568, #2b6cb0);
-background-size: 400% 400%;
-animation: gradientBG 4s ease infinite;
-}
-
-.midnight{
-    background: linear-gradient(-45deg, #1e293b, #0f172a, #334155, #668dc4);
-background-size: 400% 400%;
-animation: gradientBG 6s ease infinite;
-}
-
-.electric{
-    background: linear-gradient(-45deg, #6441a5, #2a0845, #7e7cec, #ff7eb3);
-background-size: 400% 400%;
-animation: gradientBG 5s ease infinite;
-
-}
-.aurora-lights{
-    background: linear-gradient(-45deg, #00c6ff, #0072ff, #00f260, #0575e6);
-background-size: 400% 400%;
-animation: gradientBG 5s ease infinite;
-color: #1d1f21;
-}
-
-.neon-pulse {
-  background: linear-gradient(-45deg, #ff6f91, #ffc3a0, #c471ed, #f64f59);
-  background-size: 400% 400%;
-  animation: gradientBG 5s ease infinite;
-  color: #d7e1eb;
-}
-
 @keyframes gradientBG {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
   }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
 .prompt {
   display: flex;
