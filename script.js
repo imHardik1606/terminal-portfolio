@@ -152,8 +152,15 @@ document.addEventListener("DOMContentLoaded", function () {
     echo: (args) => args.join(" "),
 
     education: () => {
-      return `<span style="color:${themeColors.textColor};">G.H. Raisoni College of Commerce, Science and Technology</span> | 2023 - 2026 <br><span style="color:${themeColors.textColor};">Dr. Ambedkar College</span> | 2020 - 2022 <br><span style="color:${themeColors.textColor};">Shahu's Garden High School</span> | till 2020`;
+      return `
+        <span style="color:${themeColors.textColor};">G.H. Raisoni College of Commerce, Science and Technology</span> | 2023 - 2026 <br>
+        <span style="color:${themeColors.textColor};">CGPA: 8.0</span> <br><br>
+        <span style="color:${themeColors.textColor};">Dr. Ambedkar College (HSC - 12th)</span> | 2020 - 2022 <br>
+        <span style="color:${themeColors.textColor};">Percentile: 89.33%</span> <br><br>
+        <span style="color:${themeColors.textColor};">Shahu's Garden High School (SSC - 10th)</span> | 2019 - 2020 <br>
+        <span style="color:${themeColors.textColor};">Percentile: 93%</span>`;
     },
+    
 
     email: () => {
       window.open("mailto:hardikgayner@gmail.com");
