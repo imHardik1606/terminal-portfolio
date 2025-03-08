@@ -11,8 +11,9 @@ body {
 
 .terminal {
   background-color: #1d1f21;
-  border-radius: 10px;
+  border-radius: 2%;
   width: 80%;
+  overflow: hidden;
   max-width: 800px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   margin: 10px; /* Add margin for smaller screens */
@@ -20,11 +21,9 @@ body {
 
 .terminal-header {
   display: flex;
-  height: 2rem;
-  position: relative;
   align-items: center;
-  text-align: center;
-  justify-content: space-between; /* Ensures space between btns and terminal name */
+  justify-content: space-between;
+  flex-wrap: nowrap; /* Prevents wrapping on small screens */
   padding: 10px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -32,23 +31,23 @@ body {
   color: white;
   background-size: 400% 400%;
   animation: gradientBG 5s ease infinite;
-  /* Example text color */
+  white-space: nowrap; /* Prevent text from wrapping */
 }
 
-.terminal-header h1 {
-  position: absolute;
-  left: 50%; /* Move to the middle of the container */
-  transform: translateX(
-    -50%
-  ); /* Ensure perfect centering by adjusting for width */
-  margin: 0; /* Avoid default margin pushing */
+.terminal-name {
+  flex-grow: 1; /* Takes up remaining space */
+  text-align: center;
   font-size: 16px;
-  white-space: nowrap; /* Prevent text from breaking into a new line */
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Prevents text overflow */
+  max-width: calc(100% - 100px); /* Reserves space for buttons */
 }
 
 .btns {
   display: flex;
-  gap: 10px; /* Spacing between buttons */
+  gap: 10px;
+  flex-shrink: 0; /* Prevents buttons from shrinking */
 }
 
 .btn {
@@ -68,13 +67,6 @@ body {
 
 .maximize {
   background-color: #00ca4e;
-}
-
-.terminal-name {
-  flex: 1; /* Takes up the remaining space */
-  text-align: center; /* Centers text within the terminal-name div */
-  font-size: 16px;
-  font-weight: bold;
 }
 
 .terminal-body {
@@ -137,17 +129,11 @@ span {
   }
 
   .terminal-header {
-    flex-direction: column; /* Stack buttons and terminal name */
-    align-items: flex-start;
-  }
-
-  .terminal-name {
-    margin-top: 10px;
-    text-align: center; /* Center text for small screens */
+    padding: 8px;
   }
 
   .btn {
-    width: 15px; /* Smaller buttons */
+    width: 15px;
     height: 15px;
   }
 }
@@ -168,7 +154,7 @@ span {
   }
 
   .btn {
-    width: 12px; /* Even smaller buttons */
+    width: 12px;
     height: 12px;
   }
 

@@ -31,7 +31,9 @@ document.addEventListener("DOMContentLoaded", function () {
           <span style="color:${themeColors.textColor};">date</span>        - Get today's date <br>
           <span style="color:${themeColors.textColor};">greet "name"</span> - Greet yourself <br>
           <span style="color:${themeColors.textColor};">list fun</span>    - Get a list of more fun commands <br>
-      `;
+          <span style="color:${themeColors.textColor};">get_status</span>  - View my current focus and achievements <br>
+          <span style="color:${themeColors.textColor};">get_learning</span> - See what technologies I'm currently exploring <br>
+        `;
     },
 
     themes: `<div style="display: flex; flex-wrap: wrap; gap: 20px; max-width: 600px;">
@@ -160,7 +162,6 @@ document.addEventListener("DOMContentLoaded", function () {
         <span style="color:${themeColors.textColor};">Shahu's Garden High School (SSC - 10th)</span> | 2019 - 2020 <br>
         <span style="color:${themeColors.textColor};">Percentile: 93%</span>`;
     },
-    
 
     email: () => {
       window.open("mailto:hardikgayner@gmail.com");
@@ -170,8 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     history: () => commandHistory.join("<br>"),
 
-    projects:
-      `<strong>Projects:</strong>
+    projects: `<strong>Projects:</strong>
       You can visit my <a href="https://github.com/imHardik1606" target="_blank"><strong>GitHub</strong></a> to see all my projects. <hr>
       These are my personal favorites: <br>
       1. <strong>TravelBuddy</strong> - Find Travel Companions and Share Costs <br>
@@ -187,7 +187,13 @@ document.addEventListener("DOMContentLoaded", function () {
       3. <strong>SuperCar Rental</strong> - Car Rental Management Platform <br>
       An online platform for renting high-end cars with features like vehicle availability tracking, rental cost calculation, and booking history. Users can browse car models, book vehicles, and track their bookings effortlessly. Built with <strong>React</strong>, <strong>Node.js</strong>, and <strong>MongoDB</strong>. <br>
       <div style='width:30%; height: 50%; padding: 2%; border: 2px solid white; margin:4%'>Work in Progress</div> 
-      <a href='' style='padding: 2%; margin:4%'> Link </a>`,
+      <a href='' style='padding: 2%; margin:4%'> Link </a> <br>
+      
+      4. <strong>AI-Travel Planner</strong> - Personalized AI-Powered Travel Itinerary <br>
+      An intelligent travel planning platform that uses and <strong>Gen-AI</strong> to create personalized itineraries based on user preferences, budget, and location. Users receive AI-generated recommendations for accommodations, restaurants, and sightseeing spots, along with optimized travel routes. Built with <strong>React.js</strong>, <strong>OAuth</strong>, <strong>Firebase</strong>, <strong>Firebase Auth</strong>, <strong>TailwindCSS</strong>, <strong>Gemini API</strong>, and <strong>ShadCN</strong>. <br>
+      <div style='width:30%; height: 50%; padding: 2%; border: 2px solid white; margin:4%'>Work in Progress</div> &nbsp; 
+      <a href='https://github.com/imHardik1606/AI-Travel-Planner' style='padding: 2%; margin:4%'> Link </a> <br>
+`,
 
     pwd: "You are currently in the root directory.",
 
@@ -202,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <span style="color:${themeColors.textColor};"><strong>Strengths</strong>:</span> DSA, Backend Development, REST APIs, Problem Solving <br>
         <span style="color:${themeColors.textColor};"><strong>Soft Skills</strong>:</span> Leadership, Teamwork, Communication, Time Management
       `;
-    },    
+    },
 
     // socials:
     //   "Connect with me on <br>1. LinkedIn: https://www.linkedin.com/in/hardik-gayner-0b2ab32ba,<br>2. GitHub: https://github.com/imHardik1606,<br>3. Twitter: https://x.com/h_gayner, <br>4. Leetcode: https://leetcode.com/u/knight_16",
@@ -300,6 +306,18 @@ document.addEventListener("DOMContentLoaded", function () {
         "Fun fact: The password for the computer systems used in the U.S. nuclear missile program was once '00000000' for nearly 20 years!",
       ];
       return funfacts[Math.floor(Math.random() * funfacts.length)];
+    },
+
+    get_status: () => {
+      return `[ 🔥 ] Currently grinding DSA on LeetCode  
+            <br>[ 🛠️ ] Building full-stack projects using MERN, LLMs, Gen-AI 
+            <br>[ 🏆 ] Won RTH 2025 Hackathon  
+            <br>[ 🤖 ] Exploring LLMs for my personal projects  
+            <br>[ 🚀 ] Preparing for tech internships`;
+    },
+
+    get_learning: () => {
+      return `<p style="color:${themeColors.textColor};">Currently learning GoLang & TypeScript</p>`;
     },
   };
 
