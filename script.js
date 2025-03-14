@@ -12,28 +12,77 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const commands = {
     help: () => {
+      // return `
+      //     <span style="color:${themeColors.textColor};">about</span>       - Learn more about me <br>
+      //     <span style="color:${themeColors.textColor};">clear</span>       - Clear the terminal display <br>
+      //     <span style="color:${themeColors.textColor};">echo</span>        - Display custom text or messages <br>
+      //     <span style="color:${themeColors.textColor};">education</span>   - Explore my academic journey <br>
+      //     <span style="color:${themeColors.textColor};">resume</span>      - Jump to my resume directly<br>
+      //     <span style="color:${themeColors.textColor};">getResume</span>   - Get my resume in terminal<br>
+      //     <span style="color:${themeColors.textColor};">email</span>       - Reach out via Email <br>
+      //     <span style="color:${themeColors.textColor};">exit</span>        - Close the current session <br>
+      //     <span style="color:${themeColors.textColor};">help</span>        - Get a list of available commands <br>
+      //     <span style="color:${themeColors.textColor};">history</span>     - See your command usage history <br>
+      //     <span style="color:${themeColors.textColor};">projects</span>    - Check out my projects <br>
+      //     <span style="color:${themeColors.textColor};">pwd</span>         - Show the current working directory <br>
+      //     <span style="color:${themeColors.textColor};">skills</span>      - View my skill set <br>
+      //     <span style="color:${themeColors.textColor};">socials</span>     - Discover my social media profiles <br>
+      //     <span style="color:${themeColors.textColor};">themes</span>      - Browse through available themes <br>
+      //     <span style="color:${themeColors.textColor};">welcome</span>     - View the introductory section <br>
+      //     <span style="color:${themeColors.textColor};">whoami</span>      - Find out who the current user is <br>
+      //     <span style="color:${themeColors.textColor};">date</span>        - Get today's date <br>
+      //     <span style="color:${themeColors.textColor};">greet "name"</span> - Greet yourself <br>
+      //     <span style="color:${themeColors.textColor};">list fun</span>    - Get a list of more fun commands <br>
+      //     <span style="color:${themeColors.textColor};">get_status</span>  - View my current focus and achievements <br>
+      //     <span style="color:${themeColors.textColor};">get_learning</span> - See what technologies I'm currently exploring <br>
+      //   `;
+      // return `
+      // <span style="color:${themeColors.textColor};">about</span>       - Who am I? What do I do? The mystery unfolds! 🎭<br>
+      // <span style="color:${themeColors.textColor};">clear</span>       - Wipe the terminal clean—because clutter is chaos! 🧼<br>
+      // <span style="color:${themeColors.textColor};">echo</span>        - Whatever you type, I’ll repeat. Great for pep talks! 📢<br>
+      // <span style="color:${themeColors.textColor};">education</span>   - Walk through my academic adventures! 🎓<br>
+      // <span style="color:${themeColors.textColor};">resume</span>      - Skip the small talk, jump straight to my resume! 📄<br>
+      // <span style="color:${themeColors.textColor};">getResume</span>   - Want my resume in the terminal? Say no more! 🖨️<br>
+      // <span style="color:${themeColors.textColor};">email</span>       - Send me an email and make my inbox feel special. 📩<br>
+      // <span style="color:${themeColors.textColor};">exit</span>        - Leaving so soon? Fine, close the session. 😢<br>
+      // <span style="color:${themeColors.textColor};">help</span>        - Need assistance? Here’s your lifeline! 🆘<br>
+      // <span style="color:${themeColors.textColor};">history</span>     - Relive your past commands—because history matters! 📜<br>
+      // <span style="color:${themeColors.textColor};">projects</span>    - Peek into my coding lab and see what I’ve built! 🏗️<br>
+      // <span style="color:${themeColors.textColor};">pwd</span>         - Reveal your current location… in the terminal. 📍<br>
+      // <span style="color:${themeColors.textColor};">skills</span>      - Discover my tech superpowers. ⚡<br>
+      // <span style="color:${themeColors.textColor};">socials</span>     - Stalk me online (in a professional way). 🔗<br>
+      // <span style="color:${themeColors.textColor};">themes</span>      - Switch up the vibe with different themes! 🎨<br>
+      // <span style="color:${themeColors.textColor};">welcome</span>     - Get a warm, digital hug from my terminal. 🤗<br>
+      // <span style="color:${themeColors.textColor};">whoami</span>      - A philosophical question... but also, just your username. 🧐<br>
+      // <span style="color:${themeColors.textColor};">date</span>        - What day is it? I got you covered! 📅<br>
+      // <span style="color:${themeColors.textColor};">greet "name"</span> - Let me greet you like the legend you are. 👋<br>
+      // <span style="color:${themeColors.textColor};">list fun</span>    - Bored? Check out some fun commands! 🎉<br>
+      // <span style="color:${themeColors.textColor};">get_status</span>  - See what I’m up to—grinding, building, or just chilling. 🚀<br>
+      // <span style="color:${themeColors.textColor};">get_learning</span> - Find out what new tech I’m currently exploring! 📚<br>
+      // `;
       return `
-          <span style="color:${themeColors.textColor};">about</span>       - Learn more about me <br>
-          <span style="color:${themeColors.textColor};">clear</span>       - Clear the terminal display <br>
-          <span style="color:${themeColors.textColor};">echo</span>        - Display custom text or messages <br>
-          <span style="color:${themeColors.textColor};">education</span>   - Explore my academic journey <br>
-          <span style="color:${themeColors.textColor};">resume</span>      - Jump to my resume directly<br>
-          <span style="color:${themeColors.textColor};">email</span>       - Reach out via Email <br>
-          <span style="color:${themeColors.textColor};">exit</span>        - Close the current session <br>
-          <span style="color:${themeColors.textColor};">help</span>        - Get a list of available commands <br>
-          <span style="color:${themeColors.textColor};">history</span>     - See your command usage history <br>
-          <span style="color:${themeColors.textColor};">projects</span>    - Check out my projects <br>
-          <span style="color:${themeColors.textColor};">pwd</span>         - Show the current working directory <br>
-          <span style="color:${themeColors.textColor};">skills</span>      - View my skill set <br>
-          <span style="color:${themeColors.textColor};">socials</span>     - Discover my social media profiles <br>
-          <span style="color:${themeColors.textColor};">themes</span>      - Browse through available themes <br>
-          <span style="color:${themeColors.textColor};">welcome</span>     - View the introductory section <br>
-          <span style="color:${themeColors.textColor};">whoami</span>      - Find out who the current user is <br>
-          <span style="color:${themeColors.textColor};">date</span>        - Get today's date <br>
-          <span style="color:${themeColors.textColor};">greet "name"</span> - Greet yourself <br>
-          <span style="color:${themeColors.textColor};">list fun</span>    - Get a list of more fun commands <br>
-          <span style="color:${themeColors.textColor};">get_status</span>  - View my current focus and achievements <br>
-          <span style="color:${themeColors.textColor};">get_learning</span> - See what technologies I'm currently exploring <br>
+        <span style="color:${themeColors.textColor};">about</span>       - Learn more about my professional background. <br>
+        <span style="color:${themeColors.textColor};">clear</span>       - Clears the terminal display for a fresh start. <br>
+        <span style="color:${themeColors.textColor};">echo</span>        - Displays the provided text or message. <br>
+        <span style="color:${themeColors.textColor};">education</span>   - View details about my academic qualifications. <br>
+        <span style="color:${themeColors.textColor};">resume</span>      - Opens my resume for quick access. <br>
+        <span style="color:${themeColors.textColor};">getResume</span>   - Displays my resume directly in the terminal. <br>
+        <span style="color:${themeColors.textColor};">email</span>       - Contact me via email. <br>
+        <span style="color:${themeColors.textColor};">exit</span>        - Closes the current terminal session. <br>
+        <span style="color:${themeColors.textColor};">help</span>        - Lists all available commands and their functions. <br>
+        <span style="color:${themeColors.textColor};">history</span>     - Displays the history of previously entered commands. <br>
+        <span style="color:${themeColors.textColor};">projects</span>    - Explore my past and ongoing projects. <br>
+        <span style="color:${themeColors.textColor};">pwd</span>         - Displays the current working directory. <br>
+        <span style="color:${themeColors.textColor};">skills</span>      - Provides an overview of my technical skill set. <br>
+        <span style="color:${themeColors.textColor};">socials</span>     - Access links to my social media profiles. <br>
+        <span style="color:${themeColors.textColor};">themes</span>      - View and switch between available terminal themes. <br>
+        <span style="color:${themeColors.textColor};">welcome</span>     - Displays the introduction section. <br>
+        <span style="color:${themeColors.textColor};">whoami</span>      - Displays the current user’s identity. <br>
+        <span style="color:${themeColors.textColor};">date</span>        - Shows the current date and time. <br>
+        <span style="color:${themeColors.textColor};">greet "name"</span> - Displays a personalized greeting message. <br>
+        <span style="color:${themeColors.textColor};">list fun</span>    - Provides a list of additional interactive commands. <br>
+        <span style="color:${themeColors.textColor};">get_status</span>  - Displays my current professional focus and achievements. <br>
+        <span style="color:${themeColors.textColor};">get_learning</span> - Shows the technologies and skills I am currently learning. <br>
         `;
     },
 
@@ -323,11 +372,13 @@ document.addEventListener("DOMContentLoaded", function () {
     },
 
     resume: () => {
-      window.open("https://drive.google.com/file/d/1ctgWtjVXXjgjWtEU2aLRYIS3I680tuCD/view?usp=sharing");
-      return `Directed you to my resume`
-    },  
+      window.open(
+        "https://drive.google.com/file/d/1ctgWtjVXXjgjWtEU2aLRYIS3I680tuCD/view?usp=sharing"
+      );
+      return `Directed you to my resume`;
+    },
 
-    getresume: () => {
+    getResume: () => {
       return `<div style="display: flex; flex-wrap: wrap; gap: 20px; max-width: 900px; font-family: 'Georgia', serif; line-height: 1.6; border: 2px dotted #0077cc; padding: 20px;  border-radius: 10px; box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);">
     
         <div style="flex: 1; min-width: 100%; text-align: center;">
@@ -374,12 +425,10 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
       <p style="text-align:center; color: #222; color:#fff; font-size: 14px; font-weight: bold; font-family: 'Georgia', serif; margin-top: 15px;">📅 Last Updated: January 2025</p>`;
     },
-    
-    
   };
 
   function processCommand(input) {
-    const [commandName, ...args] = input.toLowerCase().split(" ");
+    const [commandName, ...args] = input.split(" ");
     let response;
 
     if (commands[`${commandName} ${args.join(" ")}`]) {
