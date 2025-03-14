@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <div style='width:30%; height: 50%; padding: 2%; border: 2px solid white; margin:4%'>Work in Progress</div> 
       <a href='' style='padding: 2%; margin:4%'> Link </a> <br>
       
-      4. <strong>AI-Travel Planner</strong> - Personalized AI-Powered Travel Itinerary <br>
+      4. <strong>TripMate</strong> - Personalized AI-Powered Travel Itinerary <br>
       An intelligent travel planning platform that uses and <strong>Gen-AI</strong> to create personalized itineraries based on user preferences, budget, and location. Users receive AI-generated recommendations for accommodations, restaurants, and sightseeing spots, along with optimized travel routes. Built with <strong>React.js</strong>, <strong>OAuth</strong>, <strong>Firebase</strong>, <strong>Firebase Auth</strong>, <strong>TailwindCSS</strong>, <strong>Gemini API</strong>, and <strong>ShadCN</strong>. <br>
       <div style='width:30%; height: 50%; padding: 2%; border: 2px solid white; margin:4%'>Work in Progress</div> &nbsp; 
       <a href='https://github.com/imHardik1606/AI-Travel-Planner' style='padding: 2%; margin:4%'> Link </a> <br>
@@ -221,6 +221,7 @@ document.addEventListener("DOMContentLoaded", function () {
   3. <a href="https://x.com/h_gayner" target="_blank"><i class="fab fa-twitter">&nbsp; &nbsp;</i>Twitter</a><br>
   4. <a href="https://leetcode.com/u/knight_16" target="_blank"><i class="fa-solid fa-code">&nbsp; &nbsp;</i>Leetcode</a>
   </div>
+  
   `,
 
     welcome: `Hey there! I am <strong>Hardik Gayner</strong>, a second-year student at GHRCCST, Nagpur. <br>
@@ -319,6 +320,11 @@ document.addEventListener("DOMContentLoaded", function () {
     get_learning: () => {
       return `<p style="color:${themeColors.textColor};">Currently learning GoLang & TypeScript</p>`;
     },
+
+    resume: () => {
+      window.open("https://drive.google.com/file/d/1ctgWtjVXXjgjWtEU2aLRYIS3I680tuCD/view?usp=sharing");
+      return `Directed you to my resume`
+    },  
   };
 
   function processCommand(input) {
