@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <span style="color:${themeColors.textColor};">clear</span>       - Clear the terminal display <br>
           <span style="color:${themeColors.textColor};">echo</span>        - Display custom text or messages <br>
           <span style="color:${themeColors.textColor};">education</span>   - Explore my academic journey <br>
+          <span style="color:${themeColors.textColor};">resume</span>      - Jump to my resume directly<br>
           <span style="color:${themeColors.textColor};">email</span>       - Reach out via Email <br>
           <span style="color:${themeColors.textColor};">exit</span>        - Close the current session <br>
           <span style="color:${themeColors.textColor};">help</span>        - Get a list of available commands <br>
@@ -325,6 +326,56 @@ document.addEventListener("DOMContentLoaded", function () {
       window.open("https://drive.google.com/file/d/1ctgWtjVXXjgjWtEU2aLRYIS3I680tuCD/view?usp=sharing");
       return `Directed you to my resume`
     },  
+
+    getresume: () => {
+      return `<div style="display: flex; flex-wrap: wrap; gap: 20px; max-width: 900px; font-family: 'Georgia', serif; line-height: 1.6; border: 2px dotted #0077cc; padding: 20px;  border-radius: 10px; box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);">
+    
+        <div style="flex: 1; min-width: 100%; text-align: center;">
+          <h2 style="color:rgb(196, 218, 241); border-bottom: 2px dotted #0077cc; padding-bottom: 5px;">📌 Hardik Gayner</h2>
+          <p style="font-size: 16px; font-weight: bold;">📍 Nagpur, Maharashtra | ✉️ <a href="mailto:hardikgayner1606@gmail.com" style="color: #0056b3; text-decoration: none;">hardikgayner1606@gmail.com</a> | 💻 <a href="https://github.com/imHardik1606" target="_blank" style="color: #0056b3; text-decoration: none;">GitHub</a> | 🔗 <a href="https://www.linkedin.com/in/hardik-gayner-0b2ab32ba/" target="_blank" style="color: #0056b3; text-decoration: none;">LinkedIn</a></p>
+        </div>
+    
+        <div style="flex: 1; min-width: 100%;">
+          <h2 style="color:rgb(196, 218, 241); border-bottom: 2px dotted #0077cc; padding-bottom: 5px;">🏫 Education</h2>
+          <ul style="padding-left: 20px;">
+            <li>🎓 <strong>G.H. Raisoni College of Commerce, Science and Technology</strong> (2023 - Present) | CGPA: 8.89</li>
+            <li>🎓 <strong>Dr. Ambedkar College, Nagpur</strong> (2020 - 2022) | Grade: 89.33%</li>
+            <li>🎓 <strong>Shahu’s Garden High School</strong> (2019 - 2020) | Grade: 93%</li>
+          </ul>
+        </div>
+    
+        <div style="flex: 1; min-width: 100%;">
+          <h2 style="color:rgb(196, 218, 241); border-bottom: 2px dotted #0077cc; padding-bottom: 5px;">💻 Projects</h2>
+          <ul style="padding-left: 20px;">
+            <li>🔹 <strong>MERN Chat</strong> - Real-time messaging app with WebSockets | <a href="https://github.com/imHardik1606/mern-chat" target="_blank" style="color: #0056b3; text-decoration: none;">GitHub</a></li>
+            <li>🔹 <strong>WanderLust</strong> - Vacation rental platform with Mapbox API | <a href="https://github.com/imHardik1606/Wanderlust" target="_blank" style="color: #0056b3; text-decoration: none;">GitHub</a></li>
+            <li>🔹 <strong>Library Management System</strong> - CLI-based book management | <a href="https://github.com/imHardik1606/Library-Management-System" target="_blank" style="color: #0056b3; text-decoration: none;">GitHub</a></li>
+          </ul>
+        </div>
+    
+        <div style="flex: 1; min-width: 100%;">
+          <h2 style="color:rgb(196, 218, 241); border-bottom: 2px dotted #0077cc; padding-bottom: 5px;">⚡ Skills</h2>
+          <p><strong>Languages:</strong> Java, JavaScript, TypeScript, Python, C++, SQL</p>
+          <p><strong>Frameworks:</strong> Node.js, Express.js, React.js</p>
+          <p><strong>Databases:</strong> MongoDB, MySQL, PostgreSQL</p>
+          <p><strong>Tools:</strong> Git, AWS, Postman, VS Code</p>
+        </div>
+    
+        <div style="flex: 1; min-width: 100%;">
+          <h2 style="color:rgb(196, 218, 241); border-bottom: 2px dotted #0077cc; padding-bottom: 5px;">🏆 Achievements</h2>
+          <ul style="padding-left: 20px;">
+            <li>🏅 2× Winner of Raisoni Tech Hackathon (RTHack)</li>
+            <li>🥇 1st place in CodePhase (200+ participants)</li>
+            <li>📈 1500+ rating on LeetCode, 1200+ on CodeChef</li>
+            <li>🧠 Solved 800+ problems on LeetCode & GeeksforGeeks</li>
+          </ul>
+        </div>
+    
+      </div>
+      <p style="text-align:center; color: #222; color:#fff; font-size: 14px; font-weight: bold; font-family: 'Georgia', serif; margin-top: 15px;">📅 Last Updated: January 2025</p>`;
+    },
+    
+    
   };
 
   function processCommand(input) {
