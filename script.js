@@ -159,11 +159,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     "themes go to midnight": () => {
       terminalBody.style.background =
-        "linear-gradient(-45deg, #1e293b, #0f172a, #334155, #668dc4)";
+        "linear-gradient(-45deg, #0a0a0a, #1c1c1c,rgb(243, 139, 70),rgb(240, 214, 99))";
       terminalBody.style.backgroundSize = "400% 400%";
-      terminalBody.style.color = "#d2d2d2";
-      terminalBody.style.animation = "gradientBG 4s ease infinite";
-      return "Switched to midnight!";
+      terminalBody.style.color = "#ffdd99"; // Soft golden text for readability
+      terminalBody.style.animation = "gradientBG 5s ease infinite";
+      terminalBody.style.border = "2px solid rgba(255, 217, 0, 0.8)"; // Subtle golden glow border
+      terminalBody.style.boxShadow = "0px 0px 15px rgba(255, 215, 0, 0.3)"; // Adds a soft glowing effect
+      return "Switched to Midnight Glow! 🌙✨";
     },
 
     "themes go to electric": () => {
