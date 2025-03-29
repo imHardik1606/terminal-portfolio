@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const terminalBody = document.querySelector(".terminal-body");
   const terminalHeader = document.querySelector(".terminal-header");
   const terminal = document.querySelector(".terminal");
+  const command = document.querySelectorAll(".command");
   const icon = document.createElement("i");
   const commandHistory = [];
   let historyIndex = -1;
@@ -114,6 +115,11 @@ document.addEventListener("DOMContentLoaded", function () {
       terminalHeader.style.color = "white";
       terminalBody.style.color = "#00ff00";
       themeColors.textColor = "#00ff00";
+
+      command.forEach((cmd) => {
+        cmd.style.color = "#ffcc00"; // Warm Yellow for contrast
+      });
+
       return "Switched to Ubuntu theme!";
     },
 
@@ -124,6 +130,11 @@ document.addEventListener("DOMContentLoaded", function () {
       terminalHeader.style.color = "#00ff00";
       terminalBody.style.color = "#00ff00";
       themeColors.textColor = "#00ff00";
+
+      command.forEach((cmd) => {
+        cmd.style.color = "#33ff33"; // Bright Green for terminal effect
+      });
+
       return "Switched to Git-Bash theme!";
     },
 
@@ -132,10 +143,17 @@ document.addEventListener("DOMContentLoaded", function () {
       terminalBody.style.background =
         "linear-gradient(135deg, #ffd9df,rgb(250, 160, 172),#ff69b4)";
       terminalHeader.style.color = "#ff178b";
-      terminalBody.style.color = "#ff178b";
+      terminalHeader.style.background =
+        "linear-gradient(135deg, #2e2e2e, #444444)";
+      terminalBody.style.color = "#fff";
       themeColors.textColor = "#ff0f9f";
       terminalBody.style.backgroundSize = "400% 400%";
       terminalBody.style.animation = "gradientBG 8s ease infinite";
+
+      command.forEach((cmd) => {
+        cmd.style.color = "#ff007f"; // Deep Pink for Sweet theme
+      });
+
       return "Switched to Sweet theme!";
     },
 
@@ -145,7 +163,12 @@ document.addEventListener("DOMContentLoaded", function () {
       terminalBody.style.backgroundSize = "400% 400%";
       terminalBody.style.color = "#d2d2d2";
       terminalBody.style.animation = "gradientBG 8s ease infinite";
-      return "Switched to code editor !";
+
+      command.forEach((cmd) => {
+        cmd.style.color = "#89ddff"; // Light Blue for editor feel
+      });
+
+      return "Switched to Code Editor theme!";
     },
 
     "themes go to night": () => {
@@ -154,17 +177,27 @@ document.addEventListener("DOMContentLoaded", function () {
       terminalBody.style.backgroundSize = "400% 400%";
       terminalBody.style.color = "#d2d2d2";
       terminalBody.style.animation = "gradientBG 4s ease infinite";
-      return "Switched to night !";
+
+      command.forEach((cmd) => {
+        cmd.style.color = "#a0aec0"; // Soft Gray-Blue for Night mode
+      });
+
+      return "Switched to Night theme!";
     },
 
     "themes go to midnight": () => {
       terminalBody.style.background =
         "linear-gradient(-45deg, #0a0a0a, #1c1c1c,rgb(243, 139, 70),rgb(240, 214, 99))";
       terminalBody.style.backgroundSize = "400% 400%";
-      terminalBody.style.color = "#ffdd99"; // Soft golden text for readability
+      terminalBody.style.color = "#ffdd99"; // Soft golden text
       terminalBody.style.animation = "gradientBG 5s ease infinite";
-      terminalBody.style.border = "2px solid rgba(255, 217, 0, 0.8)"; // Subtle golden glow border
-      terminalBody.style.boxShadow = "0px 0px 15px rgba(255, 215, 0, 0.3)"; // Adds a soft glowing effect
+      terminalBody.style.border = "2px solid rgba(255, 217, 0, 0.8)";
+      terminalBody.style.boxShadow = "0px 0px 15px rgba(255, 215, 0, 0.3)";
+
+      command.forEach((cmd) => {
+        cmd.style.color = "#ffcc66"; // Warm Golden Yellow
+      });
+
       return "Switched to Midnight Glow! 🌙✨";
     },
 
@@ -174,16 +207,25 @@ document.addEventListener("DOMContentLoaded", function () {
       terminalBody.style.backgroundSize = "400% 400%";
       terminalBody.style.color = "#d2d2d2";
       terminalBody.style.animation = "gradientBG 4s ease infinite";
-      return "Switched to electric !";
+
+      command.forEach((cmd) => {
+        cmd.style.color = "#fdfd96"; // Neon Yellow for Electric theme
+      });
+
+      return "Switched to Electric theme!";
     },
 
     "themes go to aurora lights": () => {
+      command.forEach((cmd) => {
+        cmd.style.color = "#4b0082"; // Deep Indigo for Aurora
+      });
       terminalBody.style.background =
         "linear-gradient(-45deg,#41C3E7,#3DF39E,#4BEC8B,#66EB61)";
       terminalBody.style.backgroundSize = "400% 400%";
       terminalBody.style.color = "#8050a6";
       terminalBody.style.animation = "gradientBG 4s ease infinite";
-      return "Switched to aurora lights !";
+
+      return "Switched to Aurora Lights!";
     },
 
     "themes go to neon pulse": () => {
@@ -192,7 +234,12 @@ document.addEventListener("DOMContentLoaded", function () {
       terminalBody.style.backgroundSize = "400% 400%";
       terminalBody.style.color = "#63686e";
       terminalBody.style.animation = "gradientBG 4s ease infinite";
-      return "Switched to neon pulse !";
+
+      command.forEach((cmd) => {
+        cmd.style.color = "#ff44cc"; // Bright Pink for Neon Pulse
+      });
+
+      return "Switched to Neon Pulse!";
     },
 
     about:
@@ -233,8 +280,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
       2. <strong>MERN Chat</strong> - Real-Time Messaging App <br>
       A feature-rich real-time chat application built with the <strong>MERN stack</strong>. It includes private and group messaging, live status indicators, and secure authentication using <strong>JWT</strong>. The app focuses on performance, scalability, and an intuitive UI. <br>
-      <div style='width:30%; height: 50%; padding: 2%; border: 2px solid white; margin:4%'>Work in Progress</div> &nbsp; 
-      <a href='https://github.com/imHardik1606/mern-chat' style='padding: 2%; margin:4%'> Link </a> <br>
+      <div style="width: 90%; max-width: 400px; padding: 2%; border: 2px solid white; margin: 4% auto; text-align: center; background-color: rgba(255, 255, 255, 0.1); border-radius: 10px;">
+      <img src="img/MernChat.png" alt="Tripmate Image" style="width: 100%; height: auto; max-height: 250px; border-radius: 8px; margin-top: 10px;">
+    </div>
+
+    <div style="margin-top: 10px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+      <a href="https://github.com/imHardik1606//mern-chat" 
+      style="padding: 10px 15px; text-decoration: none; color: white; font-size: 1rem; font-weight: bold; transition: 0.3s; display: inline-block;"
+      onmouseover="this.style.color='#87CEEB';" 
+      onmouseout="this.style.color='white';">
+      GitHub Link
+    </a> </div><br>
 
       3. <strong>SuperCar Rental</strong> - Car Rental Management Platform <br>
       An online platform for renting high-end cars with features like vehicle availability tracking, rental cost calculation, and booking history. Users can browse car models, book vehicles, and track their bookings effortlessly. Built with <strong>React</strong>, <strong>Node.js</strong>, and <strong>MongoDB</strong>. <br>
@@ -243,8 +299,27 @@ document.addEventListener("DOMContentLoaded", function () {
       
       4. <strong>TripMate</strong> - Personalized AI-Powered Travel Itinerary <br>
       An intelligent travel planning platform that uses and <strong>Gen-AI</strong> to create personalized itineraries based on user preferences, budget, and location. Users receive AI-generated recommendations for accommodations, restaurants, and sightseeing spots, along with optimized travel routes. Built with <strong>React.js</strong>, <strong>OAuth</strong>, <strong>Firebase</strong>, <strong>Firebase Auth</strong>, <strong>TailwindCSS</strong>, <strong>Gemini API</strong>, and <strong>ShadCN</strong>. <br>
-      <div style='width:30%; height: 50%; padding: 2%; border: 2px solid white; margin:4%'>Work in Progress</div> &nbsp; 
-      <a href='https://github.com/imHardik1606/AI-Travel-Planner' style='padding: 2%; margin:4%'> Link </a> <br>
+      
+      <div style="width: 90%; max-width: 400px; padding: 2%; border: 2px solid white; margin: 4% auto; text-align: center; background-color: rgba(255, 255, 255, 0.1); border-radius: 10px;">
+        <img src="img/TripMate.png" alt="Tripmate Image" style="width: 100%; height: auto; max-height: 250px; border-radius: 8px; margin-top: 10px;">
+      </div>
+
+      <div style="margin-top: 10px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+        <a href="https://trip-mate-rouge.vercel.app/" 
+        style="padding: 10px 15px; text-decoration: none; color: white; font-size: 1rem; font-weight: bold; transition: 0.3s; display: inline-block;"
+        onmouseover="this.style.color='#87CEEB';" 
+        onmouseout="this.style.color='white';">
+        Live Link
+      </a>
+
+      <a href="https://github.com/imHardik1606/AI-Travel-Planner" 
+        style="padding: 10px 15px; text-decoration: none; color: white; font-size: 1rem; font-weight: bold; transition: 0.3s; display: inline-block;"
+        onmouseover="this.style.color='#87CEEB';" 
+        onmouseout="this.style.color='white';">
+        GitHub Link
+      </a>
+</div>
+
 `,
 
     pwd: "You are currently in the root directory.",
@@ -276,11 +351,12 @@ document.addEventListener("DOMContentLoaded", function () {
   
   `,
 
-    welcome: `Hey there! I am <strong>Hardik Gayner</strong>, a second-year student at GHRCCST, Nagpur. <br>
-    An aspiring <strong>Computer Science</strong> enthusiast with a passion for <strong>problem-solving</strong> and <strong>backend development</strong>. <br>
-    Winner of <strong>RTH 2024 Hackathon</strong>, with <strong>1500+ ratings on LeetCode</strong> and <strong>400+ problems solved</strong> on <strong>LeetCode</strong> & <strong>GeeksForGeeks</strong>. <br>
-    Constantly learning, coding, and striving to improve with every challenge I tackle!
-    `,
+    welcome: `Hey there! 👋 I’m <strong>Hardik Gayner</strong>, a passionate <strong>Computer Science</strong> student at GHRCCST, Nagpur. 🚀<br>
+      An avid <strong>problem-solver</strong> & <strong>backend developer</strong> who loves tackling complex challenges and building efficient systems. ⚡<br>
+      🏆 <strong>RTH 2024 Hackathon Winner</strong> | 📈 <strong>1500+ LeetCode rating</strong> | 🔥 <strong>400+ DSA problems solved</strong> on <strong>LeetCode</strong> & <strong>GeeksForGeeks</strong>. <br>
+      💻 Skilled in <strong>Node.js, Express.js, MongoDB, SQL, Java, and REST APIs</strong>, with hands-on experience in Full-stack Development. <br>
+      🛠️ Currently working on <strong>impactful web projects, blending DSA expertise with scalable backend solutions </strong>. <br>
+      I’m always learning, coding, and pushing my limits to grow every day. Let’s build something amazing! 💡`,
 
     whoami: "guest@user. But you should know who you are!",
     "list fun": `
