@@ -35,9 +35,9 @@ Welcome to my **Terminal Portfolio**! This project showcases a command-line inte
 
 Once the application is running, you can use commands like:
 
-- `view projects` – List all projects
-- `view skills` – See my technical skills
-- `view achievements` – Check out milestones and accomplishments
+- `projects` – List all projects
+- `skills` – See my technical skills
+- `achievements` – Check out milestones and accomplishments
 - `exit` – Exit the terminal portfolio
 
 The portfolio is designed to be simple and intuitive. Just follow the prompts to explore my journey.
